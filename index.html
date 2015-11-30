@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        <title>VOR Bearing finder</title>
+         <style type="text/css">
+            html, body { height: 100%; margin: 0; padding: 0; }
+            .content {max-width: 600px; align-content:center; margin: 0 auto}
+            h1 {text-align: center}
+            #map { height: 80%;}
+        </style>
+	</head>
+	<body
+        <div class="content">
+            <h1>VOR Bearing Finder</h1>
+            <div>
+                <p>
+                    If you every find yourself with GPS coordinates and talking to aviation
+                    minded people (e.g. you are <a href="https://en.wikipedia.org/wiki/High-altitude_balloon">HABing</a>
+                    and talking to the FAA), you will probibly
+                    need to conver your Lat/Long into a bearing from a
+                    <a href="https://en.wikipedia.org/wiki/VHF_omnidirectional_range">VOR</a>.
+                </p>
+                <p>
+                    The goal of this site is to allow you to enter GPS coordinates and get a bearing
+                    and a distance from a VOR station.
+                </p>
+                <p>
+                    The VOR station list come from 
+                    <a href="http://ourairports.com/data/">http://ourairports.com/data/</a> I have no idea
+                    how acurate or up to date it is, so please don't sue me if it isn't righ tin your area.
+                </p>
+
+            </div>
+		    <div>
+			    Latitude: <input type="text" id="lat" value="50 03 59N"/>
+			    <br/>
+			    Longitude: <input type="text" id="lon" value="005 42 53W"/>
+                <br />
+                Include Magnetic declination: <input type="checkbox" id="deflectBearing" />
+                <br />
+                Output as DMS: <input type="checkbox" id="outputDMS" />(TODO)
+			    <br/>
+			    <input type="button" value="Find VOR Bearing" onclick="findClosestVor()"/>
+		    </div>
+            <br />
+            <div id="result" >
+            </div>
+            <br />
+            <div id="map"></div>
+        </div>
+        <script async defer type="text/javascript" src="navaids.js"></script>
+		<script async defer type="text/javascript" src="vorCalc.js"></script>
+        <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA7SYRt2IBHNkYyRLY9HAElfUWbYUE0UTQ&callback=initMap">
+        </script>
+	</body>
+</hmtl>
