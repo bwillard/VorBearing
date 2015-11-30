@@ -60,7 +60,7 @@ function findClosestVor() {
         bearing = trueBearing + minVor.magnetic_variation_deg;
     }
 
-    document.getElementById('result').innerText = minVor.callsign + " is " + distInNM.toFixed(3) + " NM away, bearing: " + bearing.toFixed(3);
+    document.getElementById('result').innerText = "Your point is " + distInNM.toFixed(3) + " NM away from " + minVor.callsign + " bearing: " + bearing.toFixed(3);
 
     if (!map) {
         alert("Map isn't initialized yet, please wait.");
